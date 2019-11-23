@@ -32,7 +32,7 @@ class Header extends Component {
                                 My cabinet
                             </button>
                         </Link>
-                        <Link to="/main">
+                        <Link to="/">
                             <button
                                 className="cabinet-button  btn  btn-dark"
                                 onClick={() => {
