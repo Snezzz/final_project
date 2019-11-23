@@ -1,0 +1,11 @@
+.records-list{
+    overflow: auto;
+}
+.records-actions{
+    text-align: center;
+    margin-bottom:10px;
+}
+.table{
+    background-color: #a99687;
+    text-align: center;
+}

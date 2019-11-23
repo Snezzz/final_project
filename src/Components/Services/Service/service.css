@@ -1,0 +1,32 @@
+.service{
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+}
+.service-action{
+    text-align: center;
+}
+.service-images img{
+    width: 164px;
+    height: 164px;
+    border-radius: 100px;
+    margin: 5px;
+}
+.record-button{
+    position:relative;
+    right: 0;
+    bottom: 2px;
+}
+.service-images{
+    text-align: center;
+}
+.service-cost{
+    text-align: center;
+}
+.service-name{
+    margin-top: 30px;
+    text-align: center;
+}
+.services-navigation{
+    margin-bottom: 20px;
+    margin-top:10px;
+}

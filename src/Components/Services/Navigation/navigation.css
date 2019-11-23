@@ -1,0 +1,12 @@
+.services-navigation{
+    text-align: center;
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+}
+.list-group a{
+    background-color: #e0d7cf;
+}
+.list-group-item.active, .badge-dark{
+    background-color: #a99687;;
+    border-color: var(--gray);
+}

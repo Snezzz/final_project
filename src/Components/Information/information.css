@@ -1,0 +1,23 @@
+.company-information{
+    height: 1000px;
+    background-image: url("/img/1.jpg");
+}
+.company-information,.company-contacts{
+    font-family: "Monotype Corsiva";
+    font-size: 24px;
+}
+.company-phone-numbers{
+    list-style: none;
+}
+.company-about, .company-contacts{
+    background-color: rgba(20,20,20,0.5);
+    color: #e8e7ce;
+    font-weight: 600;
+    text-align: center;
+}
+.company-contacts{
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    padding: 20px;
+}

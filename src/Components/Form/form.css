@@ -1,0 +1,40 @@
+.form,.form--wrong{
+    position: absolute;
+    display: none;
+    top:10%;
+    left:50%;
+    margin-left: -175px;
+    width:350px;
+    z-index: 2;
+    background-color: rgba(169, 150, 135, 0.9);
+    padding: 28px;
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+}
+label[data-for]{
+    visibility: hidden;
+}
+.form--wrong{
+    display: block;
+    border: 1px solid red;
+}
+
+.form--active{
+    display: block;
+}
+.actions{
+    text-align: center;
+}
+.actions button{
+    margin: 3px;
+}
+#logo{
+    width: 85px;
+    height: 85px;
+    margin: auto;
+}
+.exit{
+    position: absolute;
+    right: 14px;
+    top: 11px;
+}

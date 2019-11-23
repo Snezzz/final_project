@@ -1,0 +1,13 @@
+.alert{
+    height: 300px;
+}
+.personal-cabinet{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: auto;
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+}
+.alert h3{
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.navigation{
+    background-color: darkred;
+}
+.services .card{
+    text-align: center;
+    padding: 12px;
+    margin:2px;
+}
+.services{
+    margin:8px;
+}

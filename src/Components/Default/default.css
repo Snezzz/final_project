@@ -1,0 +1,16 @@
+.default{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+}
+.default .card{
+    padding: 15px;
+}
+
+.card img{
+    border-radius: 62px;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}

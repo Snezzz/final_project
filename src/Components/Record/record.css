@@ -1,0 +1,33 @@
+.form-record{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    width: 350px;
+    height: 500px;
+    left: 50%;
+    top:0;
+    margin-left: -175px;
+    overflow-y: auto;
+    background-color: rgba(169, 150, 135, 0.9);
+    padding: 28px;
+}
+.form-record--active{
+    display: block;
+}
+
+#logo{
+    width: 85px;
+    height: 85px;
+    margin: auto;
+}
+.exit{
+    position: absolute;
+    right: 14px;
+    top: 11px;
+}
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}

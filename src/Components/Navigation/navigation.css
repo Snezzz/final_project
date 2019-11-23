@@ -1,0 +1,13 @@
+.navigation{
+    background-color: #A99687;
+    font-family: "Segoe Script";
+}
+.navigation li{
+    background-color: rgba(198, 182, 169, 0);
+}
+a,.btn-link{
+    color: black
+}
+.nav-item a{
+    text-align: center;
+}

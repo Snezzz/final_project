@@ -1,0 +1,35 @@
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: "Segoe Script";
+    background-color: #A99687;
+}
+
+.footer img{
+    width:70px;
+    height: 70px    ;
+}
+.modal-body{
+    height:200px;
+    overflow: auto;
+}
+.footer li{
+    list-style: none;
+}
+.footer ul{
+    text-align: right;
+}
+.list-group-item{
+    background:none;
+}
+.information label{
+    display: block;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+@media screen and (min-width:200px) and (max-width: 576px){
+    .list-group-item{
+        text-align: center;
+    }
+}

@@ -1,0 +1,11 @@
+.profile-img img{
+    height: 132px;
+}
+.profile-img{
+    text-align: center;
+}
+@media screen and (min-width:200px) and (max-width: 576px){
+    .profile-img{
+        margin-top: 12px;
+    }
+}

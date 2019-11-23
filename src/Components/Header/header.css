@@ -1,0 +1,20 @@
+.header{
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background: url("/img/8.jpg") no-repeat center;
+}
+.logo{
+    width: 137px;
+    height: 110px;
+}
+.cabinet-button{
+    display: inline-block;
+    margin-right:2px;
+    margin-left:1px;
+}
+.header-button{
+    position: absolute;
+    bottom: 0;
+    font-family: "Segoe Script";
+}
