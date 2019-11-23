@@ -10,12 +10,8 @@ import {
 import Records from "./Records/records";
 
 class RecordsContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.update = this.update.bind(this);
-        this.remove = this.remove.bind(this);
-    }
-    loadRecords(id, type) {
+
+    loadRecords = (id, type) => {
         let link;
         switch (type) {
             case "admin":
@@ -36,8 +32,8 @@ class RecordsContainer extends Component {
             .catch(e => {
                 console.log(e);
             });
-    }
-    updateRecords(data) {
+    };
+    updateRecords = data => {
         fetch("http://localhost:8080/record", {
             method: "post",
             headers: { "Content-Type": "application/json" },
@@ -50,17 +46,17 @@ class RecordsContainer extends Component {
             .then(() =>
                 this.loadRecords(this.props.user.clientId, this.props.user.login)
             );
-    }
-    remove(data) {
+    };
+    remove = data => {
         const result = window.confirm("Are u sure?");
         if (result) {
             data.type = "canceled";
             this.updateRecords(data);
         }
-    }
-    update(variant) {
+    };
+    update = variant => {
         this.props.changeCategory(variant.toString());
-    }
+    };
     //load data
     componentDidMount() {
         this.loadRecords(this.props.user.clientId, this.props.user.login);
