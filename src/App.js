@@ -41,7 +41,7 @@ class App extends Component {
             <Router>
                 <Main>
                     <Switch>
-                        <Route path="/main" component={DefaultContainer} />
+                        <Route path="/" exact component={DefaultContainer} />
                         <Route path="/services" component={ServicesContainer} />
                         <Route path="/service/:id" component={ServiceContainer} />
                         <Route path="/discounts" component={DiscountsContainer} />

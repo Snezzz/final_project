@@ -8,7 +8,7 @@ class Navigation extends Component {
             <div className="navigation">
                 <ul className="nav justify-content-around">
                     <li className="nav-item col-12 col-sm-3 col-md-3 col-xl-3 col-lg-3">
-                        <Link to={{ pathname: "/main" }} className="nav-link active">
+                        <Link to={{ pathname: "/" }} className="nav-link active">
                             <button className="btn btn-link">Home</button>
                         </Link>
                     </li>
