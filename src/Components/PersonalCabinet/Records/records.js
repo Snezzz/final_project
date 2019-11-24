@@ -3,6 +3,9 @@ import "./records.css";
 import "jquery.cookie/jquery.cookie";
 
 class Records extends Component {
+    componentDidMount(){
+        this.props.update("active");
+    }
     render() {
         return (
             <div className="personal-records">

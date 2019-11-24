@@ -4,8 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import {
     addRecords,
-    changeCategory,
-    removeRecord
+    changeCategory
 } from "../../actions/recordsActions";
 import Records from "./Records/records";
 
@@ -83,8 +82,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     addRecords,
-    changeCategory,
-    removeRecord
+    changeCategory
 };
 
 //обновление состояния связывается с корневым редьюсером
