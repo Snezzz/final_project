@@ -196,7 +196,7 @@ class Footer extends Component {
                 <div className="row">
                     <div className="col-12 col-sm-8 col-md-10 col-xl-10 col-lg-10">
                         <div className="information">
-                            <img src="/img/4.png" />
+                            <img src="/img/4.png" alt=""/>
                             <label>
                                 © 2019, St.Petersburg,
                                 <br />

@@ -1,6 +1,4 @@
-.profile-img img{
-    height: 132px;
-}
+
 .profile-img{
     text-align: center;
 }
@@ -8,4 +6,17 @@
     .profile-img{
         margin-top: 12px;
     }
+}
+table{
+    font-size: 3vh;
+}
+.profile-form{
+    margin:36px;
+}
+.profile-form img{
+    border-radius: 14vh;
+    width: 28vh;
+    height: 28vh;
+    margin: auto;
+
 }

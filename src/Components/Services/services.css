@@ -9,3 +9,9 @@
 .services{
     margin:8px;
 }
+.services img{
+    border-radius: 14vh;
+    width: 28vh;
+    height: 28vh;
+    margin: auto;
+}

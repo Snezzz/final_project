@@ -3,6 +3,7 @@ import Header from "../Header/index";
 import Navigation from "../Navigation/index";
 import Footer from "../Footer/index";
 import RegistrationContainer from "../../Containers/RegistrationContainer/index";
+import './main.css'
 
 class Main extends Component {
     render() {
@@ -16,7 +17,9 @@ class Main extends Component {
                         <Navigation />
                     </div>
                     <RegistrationContainer />
-                    <div className="col-sm-12">{this.props.children}</div>
+                    <div className="col-sm-12 content">
+                        {this.props.children}
+                        </div>
                     <div className="col-sm-12">
                         <Footer />
                     </div>

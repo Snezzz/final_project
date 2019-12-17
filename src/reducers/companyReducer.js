@@ -6,11 +6,4 @@ export const companyReducer = (state = {}, action) => {
             return state;
     }
 };
-export const discountsReducer = (state = {}, action) => {
-    switch (action.type) {
-        case "LOAD_DISCOUNTS":
-            return action.data;
-        default:
-            return state;
-    }
-};
+

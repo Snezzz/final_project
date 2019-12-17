@@ -6,15 +6,25 @@
     text-align: center;
 }
 .service-images img{
-    width: 164px;
-    height: 164px;
-    border-radius: 100px;
+    width: 220px;
+    height: 212px;
+    border-radius: 212vw;
     margin: 5px;
+}
+@media screen and (min-width:1140px ) {
+    .service-images img{
+        width: 320px;
+        height: 310px;
+    }
+    h2 {
+        font-size: 12vh !important;
+    }
 }
 .record-button{
     position:relative;
     right: 0;
     bottom: 2px;
+    font-size: 3vh !important;
 }
 .service-images{
     text-align: center;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./discounts.css";
 import hash from "js-hash-code";
+import "./discounts.css"
 
 class Discounts extends Component {
     render() {

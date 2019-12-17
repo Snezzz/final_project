@@ -5,9 +5,15 @@ export const loadInformation = (data) =>{
     }
 };
 
-export const loadDiscounts = (data) =>{
-    return{
-        type:"LOAD_DISCOUNTS",
-        data
-    }
+export const load = (link) => dispatch => {
+    fetch(link, {
+        method: "get",
+        headers: { "Content-Type": "application/json" }
+    })
+        .then(data =>
+            data.json())
+        .then(data => {
+            dispatch(loadInformation(data))
+        })
+        .catch(e => console.log(e));
 };

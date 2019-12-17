@@ -1,6 +1,21 @@
 .App {
   text-align: center;
 }
+button, input{
+  font-size: 4vh !important;
+}
+span{
+  font-size: 2vh !important;
+}
+a, label {
+  font-size: 4vh !important;
+}
+h1{
+  font-size: 6vh;
+}
+div, li,h3,h2{
+  font-size: 4vh;
+}
 .card{
   font-family: "Monotype Corsiva";
   font-size: 24px;

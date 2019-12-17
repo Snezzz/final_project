@@ -1,6 +1,7 @@
 .company-information{
-    height: 1000px;
-    background-image: url("/img/1.jpg");
+    height: 100vh;
+    background: url("/img/1.jpg") no-repeat;
+    background-size: 100%;
 }
 .company-information,.company-contacts{
     font-family: "Monotype Corsiva";

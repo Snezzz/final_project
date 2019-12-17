@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./header.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 import { connect } from "react-redux";
 import { removeUser } from "../../actions/userActions";

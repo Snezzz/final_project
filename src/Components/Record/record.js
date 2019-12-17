@@ -30,10 +30,10 @@ class Record extends Component {
             type: "active"
         };
         if (
-            name != undefined &&
-            clientPhone != "" &&
-            date != "" &&
-            time != "Choose..."
+            name !== undefined &&
+            clientPhone !== "" &&
+            date !== "" &&
+            time !== "Choose..."
         ) {
             this.props.record(newService);
             alert("You were recorded!");
@@ -65,7 +65,7 @@ class Record extends Component {
                         </button>
                     </div>
                     <div className="form-group row ">
-                        <img id="logo" src="/img/4.png" />
+                        <img id="logo" src="/img/4.png" alt=""/>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="inputService" className="col-sm-4 col-form-label">

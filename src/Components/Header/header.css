@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    height: 200px;
+    height: 30vh;
     background: url("/img/8.jpg") no-repeat center;
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
@@ -8,8 +8,9 @@
     background-size: 100%;
 }
 .logo{
-    width: 137px;
-    height: 110px;
+    width: 15vh;
+    height: 15vh;
+    margin-top: 10px;
 }
 .cabinet-button{
     display: inline-block;
@@ -20,4 +21,7 @@
     position: absolute;
     bottom: 0;
     font-family: "Segoe Script";
+}
+.header-button a button{
+    font-size: 2vh;
 }

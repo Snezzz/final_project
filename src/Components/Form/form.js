@@ -75,7 +75,7 @@ class Form extends Component {
         } else {
             return false;
         }
-    }
+    };
     defineValidation = e => {
         let result = true;
         let label = $("label[data-for=" + e.target.id + "]");
@@ -85,15 +85,15 @@ class Form extends Component {
                 let email = $("#inputEmail").val();
                 if (email.length === 0) {
                     label.text("It has to be determined");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 } else if (!email.match(/[@]/)) {
                     label.text("It has to contain @");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 } else if (!email.match(/[.]/)) {
                     label.text("It has to contain .");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 }
                 break;
@@ -109,11 +109,11 @@ class Form extends Component {
                 let name = $("#inputName").val();
                 if (name.length === 0) {
                     label.text("It has to be determined");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 } else if (name.match(/[^A-Za-zА-Яа-я\s]+/)) {
                     label.text("It can be only a letters");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 }
                 break;
@@ -121,11 +121,11 @@ class Form extends Component {
                 let phone = $("#inputNumber").val();
                 if (phone.match(/[+][^0-9.^0-9]+/)) {
                     label.text("It can be only a number");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 } else if (phone.length !== 11) {
                     label.text("Number must be 11 characters");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 }
                 break;
@@ -134,13 +134,14 @@ class Form extends Component {
                 let password = $("#inputPassword").val();
                 if (repeat !== password) {
                     label.text("Passwords have to coincide");
-                    label.css("visibility", "visible");
+                    label.css("display", "block");
                     result = false;
                 }
                 break;
+            default:
         }
         if (result) {
-            label.css("visibility", "");
+            label.css("display", "");
             $(e.target).attr("data-validation", true);
             $(e.target).css("border-size", "2px");
             $(e.target).css("border-color", "green");
@@ -164,7 +165,7 @@ class Form extends Component {
                 </div>
                 <form>
                     <div className="form-group row ">
-                        <img id="logo" src="/img/4.png" />
+                        <img id="logo" src="/img/4.png" alt=""/>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="inputLogin" className="col-sm-4 col-form-label">
@@ -221,7 +222,7 @@ class Form extends Component {
                 </div>
                 <form>
                     <div className="form-group row ">
-                        <img id="logo" src="/img/4.png" />
+                        <img id="logo" src="/img/4.png" alt=""/>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="inputEmail" className="col-sm-4 col-form-label">

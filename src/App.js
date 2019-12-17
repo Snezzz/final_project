@@ -6,7 +6,7 @@ import ServicesContainer from "./Containers/ServicesContainer/index";
 import Main from "./Components/Main/index";
 import $ from "jquery";
 import ServiceContainer from "./Containers/ServiceContainer/index";
-import { createStore } from "redux";
+import { createStore,applyMiddleware } from "redux";
 import { rootReducer } from "./reducers/rootReducer";
 import CabinetContainer from "./Components/PersonalCabinet/CabinetContainer";
 import DefaultContainer from "./Containers/DefaultContainer/index";
@@ -14,8 +14,9 @@ import DiscountsContainer from "./Containers/DiscountsContainer/index";
 import Information from "./Components/Information/index";
 import { addNewUser } from "./actions/userActions";
 import { connect } from "react-redux";
+import thunk from 'redux-thunk'
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer,applyMiddleware(thunk));
 
 export const NoMatchPage = () => {
     return (
@@ -30,7 +31,7 @@ export const NoMatchPage = () => {
 };
 
 class App extends Component {
-    componentWillMount() {
+    componentDidMount() {
         if ($.cookie("User")) {
             this.props.addNewUser(JSON.parse($.cookie("User")));
         }

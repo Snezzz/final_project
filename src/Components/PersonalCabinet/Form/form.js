@@ -31,7 +31,6 @@ class Form extends Component {
                 $("#personPasswordRepeat").val("");
                 let user = this.props.user;
                 user.password = password;
-                this.props.addUser(user);
                 this.props.update(user);
             } else alert("Your password repeat has to coincide with new password!");
         } else {
@@ -68,7 +67,6 @@ class Form extends Component {
         };
         $.removeCookie("User");
         $.cookie("User", JSON.stringify(user));
-        this.props.addUser(user);
         this.props.update(user);
     };
     render() {

@@ -2,7 +2,7 @@ import {servicesReducer,serviceReducer} from "./serviceReducer";
 import {combineReducers} from "redux";
 import {userReducer,loginReducer} from "./userReducer";
 import {recordsReducer,recordsType} from "./recordsReducer"
-import {companyReducer,discountsReducer} from "./companyReducer";
+import {companyReducer} from "./companyReducer";
 
 export const rootReducer = combineReducers({
     servicesReducer,
@@ -11,7 +11,6 @@ export const rootReducer = combineReducers({
     recordsReducer,
     recordsType,
     serviceReducer,
-    companyReducer,
-    discountsReducer
+    companyReducer
     }
 );
