@@ -3,6 +3,7 @@ import "./footer.css";
 import $ from "jquery";
 
 class Footer extends Component {
+
     open = type => {
         $("#" + type)
             .css("display", "block")

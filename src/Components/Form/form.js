@@ -1,63 +1,61 @@
 import "./form.css";
 import React, { Component } from "react";
-import $ from "jquery";
 
 class Form extends Component {
+    form = (form)=>{this._form = form};
+    userLogin = (login)=>{this._login = login};
+    password = (password)=>{this._password = password};
+    email = (email) => {this._email = email};
+    name = (name) => {this._name = name};
+    number = (number) => {this._number = number};
+    passwordRepeat = (password)=> { this._passwordRepeat = password};
+
     close = () => {
-        $(".form")
-            .removeClass("form--active")
-            .removeClass("form--wrong");
+            this._form.className="form";
     };
     toggle = e => {
         e.preventDefault();
-        $("input").val("");
+        this.myFormRef.reset();
         this.props.change(!this.props.login);
     };
 
     login = e => {
         e.preventDefault();
-        const login = $("#inputLogin").val();
-        const password = $("#inputPassword").val();
+        const login = this._login.value;
+        const password = this._password.value;
         if (login.length !== 0 && password.length !== 0) {
-            $("#inputLogin").css("border-color", "");
-            $("#inputPassword").css("border-color", "");
+            this._login.style.borderColor = "";
+            this._password.style.borderColor = "";
             this.props.logIn(login, password);
         } else if (login.length === 0 && password.length === 0) {
-            $("#inputLogin").css("border-color", "red");
-            $("#inputPassword").css("border-color", "red");
+            this._login.style.borderColor = "red";
+            this._password.style.borderColor ="red";
         } else if (password.length === 0) {
-            $("#inputLogin").css("border-color", "");
-            $("#inputPassword").css("border-color", "red");
+            this._login.style.borderColor = "";
+            this._password.style.borderColor = "red";
         } else {
-            $("#inputPassword").css("border-color", "");
-            $("#inputLogin").css("border-color", "red");
+            this._password.style.borderColor = "";
+            this._login.style.borderColor = "red";
         }
     };
 
     addUser = e => {
         e.preventDefault();
         let validation = true;
-        $("input").each((i, el) => {
-            if ($(el).attr("data-validation") === "false") {
-                $(el).css("border-color", "red");
+        this.myFormRef.input.forEach((i, el) => {
+            if (el.getAttribute("data-validation") === "false") {
+                el.style.borderColor =  "red";
                 validation = false;
             }
         });
         if (validation) {
-            let name = $("#inputName")
-                .val()
-                .toString()
-                .split(" ");
+            let name = this._name.value.toString().split(" ");
             // ID  	EMAIL  	FIRST_NAME  	LOGIN  	PASSWORD  	PHONE_NUMBER  	SECOND_NAME  	SUR_NAME
-            const email = $("#inputEmail")
-                .val();
+            const email = this._email.value;
             const first_name = name[0];
-            const login = $("#inputLogin")
-                .val();
-            const password = $("#inputPassword")
-                .val();
-            const phone_number = $("#inputNumber")
-                .val();
+            const login = this._login.value;
+            const password = this._password.value;
+            const phone_number = this._number.value;
             const second_name = name[1] || "";
             const sur_name = name[2] || "";
             const user = {
@@ -69,7 +67,7 @@ class Form extends Component {
                 secondName: second_name,
                 surName: sur_name
             };
-            $("input").val("");
+            this._name.value = this._email.value = this._login.value = this._password.value = "";
             this.props.addUser(user);
             this.toggle(e);
         } else {
@@ -78,82 +76,82 @@ class Form extends Component {
     };
     defineValidation = e => {
         let result = true;
-        let label = $("label[data-for=" + e.target.id + "]");
+        let label = e.target.parentElement.children[1];
 
         switch (e.target.id) {
             case "inputEmail":
-                let email = $("#inputEmail").val();
+                let email = this._email.value;
                 if (email.length === 0) {
-                    label.text("It has to be determined");
-                    label.css("display", "block");
+                    label.textContent="It has to be determined";
+                    label.style.display =  "block";
                     result = false;
                 } else if (!email.match(/[@]/)) {
-                    label.text("It has to contain @");
-                    label.css("display", "block");
+                    label.textContent= "It has to contain @";
+                    label.style.display = "block";
                     result = false;
                 } else if (!email.match(/[.]/)) {
-                    label.text("It has to contain .");
-                    label.css("display", "block");
+                    label.textContent = "It has to contain .";
+                    label.style.display = "block";
                     result = false;
                 }
                 break;
             case "inputLogin":
-                let login = $("#inputLogin").val();
+                let login = this._login.value;
                 if (login.length === 0) {
-                    label.text("It has to be determined");
-                    label.css("visibility", "visible");
+                    label.textContent = "It has to be determined";
+                    label.style.visibility =  "visible";
                     result = false;
                 }
                 break;
             case "inputName":
-                let name = $("#inputName").val();
+                let name = this._name.value;
                 if (name.length === 0) {
-                    label.text("It has to be determined");
-                    label.css("display", "block");
+                    label.textContent= "It has to be determined";
+                    label.style.display =  "block";
                     result = false;
                 } else if (name.match(/[^A-Za-zА-Яа-я\s]+/)) {
-                    label.text("It can be only a letters");
-                    label.css("display", "block");
+                    label.textContent="It can be only a letters";
+                    label.style.display = "block";
                     result = false;
                 }
                 break;
             case "inputNumber":
-                let phone = $("#inputNumber").val();
+                let phone = this._number.value;
                 if (phone.match(/[+][^0-9.^0-9]+/)) {
-                    label.text("It can be only a number");
-                    label.css("display", "block");
+                    label.textContent="It can be only a number";
+                    label.style.display =  "block";
                     result = false;
                 } else if (phone.length !== 11) {
-                    label.text("Number must be 11 characters");
-                    label.css("display", "block");
+                    label.textContent="Number must be 11 characters";
+                    label.style.display =  "block";
                     result = false;
                 }
                 break;
             case "inputRepeatPassword":
-                let repeat = $("#inputRepeatPassword").val();
-                let password = $("#inputPassword").val();
+                let repeat = this._passwordRepeat.value;
+                let password = this._password.value;
                 if (repeat !== password) {
-                    label.text("Passwords have to coincide");
-                    label.css("display", "block");
+                    label.textContent="Passwords have to coincide";
+                    label.style.display =  "block";
                     result = false;
                 }
                 break;
             default:
         }
         if (result) {
-            label.css("display", "");
-            $(e.target).attr("data-validation", true);
-            $(e.target).css("border-size", "2px");
-            $(e.target).css("border-color", "green");
+            label.style.display =  "";
+            e.target.setAttribute("data-validation", true);
+            e.target.style.borderSize =  "2px";
+            e.target.style.borderColor =  "green";
         } else {
-            $(e.target).attr("data-validation", false);
-            $(e.target).css("border-color", "red");
+            e.target.setAttribute("data-validation", false);
+            e.target.style.borderColor =  "red";
         }
     };
 
     render() {
         return this.props.login ? (
-            <div className="form">
+            <div className="form" ref={this.form}>
                 <div className="exit">
                     <button
                         type="button"
@@ -163,7 +161,7 @@ class Form extends Component {
                         X
                     </button>
                 </div>
-                <form>
+                <form ref={(el) => this.myFormRef = el}>
                     <div className="form-group row ">
                         <img id="logo" src="/img/4.png" alt=""/>
                     </div>
@@ -173,11 +171,12 @@ class Form extends Component {
                         </label>
                         <div className="col-sm-8">
                             <input
-                                type="email"
+                                type="text"
                                 className="form-control"
                                 id="inputLogin"
                                 placeholder="Login"
                                 defaultValue=""
+                                ref={this.userLogin}
                             />
                         </div>
                     </div>
@@ -192,6 +191,7 @@ class Form extends Component {
                                 id="inputPassword"
                                 placeholder="****"
                                 defaultValue=""
+                                ref={this.password}
                             />
                         </div>
                     </div>
@@ -210,7 +210,7 @@ class Form extends Component {
                 </form>
             </div>
         ) : (
-            <div className="form">
+            <div className="form" ref={this.form}>
                 <div className="exit">
                     <button
                         type="button"
@@ -220,7 +220,7 @@ class Form extends Component {
                         X
                     </button>
                 </div>
-                <form>
+                <form ref={(el) => this.myFormRef = el}>
                     <div className="form-group row ">
                         <img id="logo" src="/img/4.png" alt=""/>
                     </div>
@@ -237,6 +237,7 @@ class Form extends Component {
                                 defaultValue=""
                                 placeholder="alex21@gmail.com"
                                 onBlur={this.defineValidation}
+                                ref={this.email}
                             />
                             <label data-for="inputEmail">dd</label>
                         </div>
@@ -254,6 +255,7 @@ class Form extends Component {
                                 defaultValue=""
                                 placeholder="alex21"
                                 onBlur={this.defineValidation}
+                                ref={this.userLogin}
                             />
                             <label data-for="inputLogin" />
                         </div>
@@ -271,6 +273,7 @@ class Form extends Component {
                                 defaultValue=""
                                 placeholder="Alex"
                                 onBlur={this.defineValidation}
+                                ref={this.name}
                             />
                             <label data-for="inputName" />
                         </div>
@@ -288,6 +291,7 @@ class Form extends Component {
                                 id="inputNumber"
                                 placeholder="8**********"
                                 onBlur={this.defineValidation}
+                                ref={this.number}
                             />
                             <label data-for="inputNumber" />
                         </div>
@@ -303,6 +307,7 @@ class Form extends Component {
                                 defaultValue=""
                                 id="inputPassword"
                                 placeholder="****"
+                                ref={this.password}
                             />
                         </div>
                     </div>
@@ -322,6 +327,7 @@ class Form extends Component {
                                 id="inputRepeatPassword"
                                 placeholder="****"
                                 onBlur={this.defineValidation}
+                                ref={this.passwordRepeat}
                             />
                             <label data-for="inputRepeatPassword" />
                         </div>

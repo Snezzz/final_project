@@ -2,20 +2,28 @@ import React, { Component } from "react";
 import "./record.css";
 import "jquery.cookie/jquery.cookie";
 import "jquery-datepicker";
-import $ from "jquery";
 
 class Record extends Component {
+    clientName = (name) => {this._clientName = name};
+    name = (name) => {this._name = name};
+    clientPhone = (phone) => {this._phone = phone};
+    date = (date) => {this._date = date};
+    time = (time) => {this._time = time};
+    id = (id) => {this._id = id};
+    cost = (cost) => {this._cost = cost};
+    form  = (form) =>{this._form = form};
+
     close = () => {
-        $(".form-record").toggleClass("form-record--active");
+        this._form.className = "form-record";
     };
     record = e => {
         e.preventDefault();
-        const clientName = $("#inputName").val();
-        const name = $("#inputService").val();
-        const clientPhone = $("#inputContacts").val();
-        const date = $("#inputDate").val();
-        const time = $("#inputTime").val();
-        const cost = Number($("#inputCost").val());
+        const clientName = this._clientName.value;
+        const name = this._name.value;
+        const clientPhone = this._phone.value;
+        const date = this._date.value;
+        const time = this._time.value;
+        const cost = Number(this._cost.value);
         const id = this.props.user.clientId;
 
         //final data to backend
@@ -37,7 +45,7 @@ class Record extends Component {
         ) {
             this.props.record(newService);
             alert("You were recorded!");
-            $(".form-record").removeClass("form-record--active");
+            this._form.className = "form-record";
         } else {
             alert("All fields should be filled");
         }
@@ -45,15 +53,14 @@ class Record extends Component {
 
     clear = e => {
         e.preventDefault();
-        $("#inputName").val("");
-        $("#inputContacts").val("");
-        $("#inputDate").val("");
-        $("#inputTime option:first").attr("selected", "selected");
+        this._clientName.value = "";
+        this._phone.value = "";
+        this._date.value = "";
     };
 
     render() {
         return (
-            <div className="form-record">
+            <div className="form-record" ref={this.form}>
                 <form>
                     <div className="exit">
                         <button
@@ -78,6 +85,7 @@ class Record extends Component {
                                 id="inputService"
                                 placeholder=""
                                 defaultValue={this.props.service}
+                                ref={this.name}
                                 disabled
                             />
                         </div>
@@ -93,6 +101,7 @@ class Record extends Component {
                                 id="inputCost"
                                 placeholder=""
                                 defaultValue={this.props.cost}
+                                ref={this.cost}
                                 disabled
                             />
                         </div>
@@ -108,6 +117,7 @@ class Record extends Component {
                                 id="inputName"
                                 placeholder=""
                                 defaultValue={this.props.user.firstName || ""}
+                                ref={this.clientName}
                             />
                         </div>
                     </div>
@@ -122,6 +132,7 @@ class Record extends Component {
                                 id="inputContacts"
                                 placeholder="89562221721"
                                 defaultValue={Number(this.props.user.phoneNumber) || ""}
+                                ref={this.clientPhone}
                             />
                         </div>
                     </div>
@@ -136,6 +147,7 @@ class Record extends Component {
                                 min={new Date().getTime()}
                                 max="2019-12-31"
                                 id="inputDate"
+                                ref={this.date}
                             />
                         </div>
                     </div>
@@ -144,7 +156,7 @@ class Record extends Component {
                             Time
                         </label>
                         <div className="col-sm-8">
-                            <select id="inputTime" className="form-control" defaultValue={1}>
+                            <select id="inputTime" className="form-control" defaultValue={1} ref={this.time}>
                                 <option key="0">Choose...</option>
                                 <option key="1">10:00-11:00</option>
                                 <option key="2">11:00-12:00</option>

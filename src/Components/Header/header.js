@@ -6,9 +6,10 @@ import { connect } from "react-redux";
 import { removeUser } from "../../actions/userActions";
 
 class Header extends Component {
+
     login = e => {
         e.preventDefault();
-        $(".form").toggleClass("form--active");
+        document.getElementsByClassName("form")[0].className+=" form--active";
     };
 
     render() {

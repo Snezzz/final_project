@@ -3,32 +3,45 @@ import $ from "jquery";
 import "./form.css";
 
 class Form extends Component {
+
+    newPassword = (password) => {this._np = password};
+    oldPassword = (password) => {this._op = password};
+    passwordRepeat = (passwordRepeat)=>{this._pr = passwordRepeat};
+    name = (name) => {this._name = name};
+    email = (email) => {this._email = email};
+    login = (login) => {this._login = login};
+    number = (number) => {this._number = number};
+
+
     checkOldPassword = () => {
-        const password = $("#personOldPassword").val();
+        const password = this._op.value;
         if (password == this.props.user.password) return true;
         else return false;
     };
     checkNewPassword = () => {
-        const newPassword = $("#personNewPassword").val();
-        const repeatPassword = $("#personPasswordRepeat").val();
+        const newPassword = this._np.value;
+        const repeatPassword = this._pr.value;
         if (newPassword.length === 0 && repeatPassword.length === 0) {
             alert("Fields have to be filled");
             return false;
-        } else if (repeatPassword != newPassword) {
+        }
+        if(repeatPassword == newPassword){
+            return true;
+        }
+        else
             return false;
-        } else return true;
     };
     updatePassword = e => {
         e.preventDefault();
         if (this.checkOldPassword()) {
             if (this.checkNewPassword()) {
-                let password = $("#personNewPassword").val();
+                let password = this._np.value;
                 if (password.length === 0) {
                     return false;
                 }
-                $("#personNewPassword").val("");
-                $("#personOldPassword").val("");
-                $("#personPasswordRepeat").val("");
+                this._np.value = "";
+                this._op.value = "";
+                this._pr.value = "";
                 let user = this.props.user;
                 user.password = password;
                 this.props.update(user);
@@ -41,15 +54,12 @@ class Form extends Component {
     update = e => {
         e.preventDefault();
         const id = this.props.user.clientId;
-        let name = $("#personName")
-            .val()
-            .toString()
-            .split(" ");
-        const email = $("#personEmail").val();
+        let name = this._name.value.toString().split(" ");
+        const email = this._email.value;
         const first_name = name[0];
-        const login = $("#personLogin").val();
+        const login = this._login.value;
         const password = this.props.user.password;
-        const phone_number = $("#personNumber").val();
+        const phone_number = this._number.value;
         const second_name = name[1] || "";
         const sur_name = name[2] || "";
         const img = this.props.user.img;
@@ -98,6 +108,7 @@ class Form extends Component {
                                             " " +
                                             user.surName
                                         }
+                                        ref={this.name}
                                     />
                                 </div>
                             </div>
@@ -110,6 +121,7 @@ class Form extends Component {
                                         className="form-control"
                                         id="personLogin"
                                         defaultValue={user.login}
+                                        ref={this.login}
                                     />
                                 </div>
                             </div>
@@ -125,6 +137,7 @@ class Form extends Component {
                                         className="form-control"
                                         id="personNumber"
                                         defaultValue={user.phoneNumber}
+                                        ref={this.number}
                                     />
                                 </div>
                             </div>
@@ -137,6 +150,7 @@ class Form extends Component {
                                         className="form-control"
                                         id="personEmail"
                                         defaultValue={user.email}
+                                        ref={this.email}
                                     />
                                 </div>
                             </div>
@@ -163,6 +177,7 @@ class Form extends Component {
                                         type="password"
                                         className="form-control"
                                         id="personOldPassword"
+                                        ref={this.oldPassword}
                                     />
                                 </div>
                             </div>
@@ -178,6 +193,7 @@ class Form extends Component {
                                         type="password"
                                         className="form-control"
                                         id="personNewPassword"
+                                        ref={this.newPassword}
                                     />
                                 </div>
                             </div>
@@ -193,6 +209,7 @@ class Form extends Component {
                                         type="password"
                                         className="form-control"
                                         id="personPasswordRepeat"
+                                        ref={this.passwordRepeat}
                                     />
                                 </div>
                             </div>
