@@ -68,7 +68,7 @@ class Records extends Component {
                         </thead>
                         <tbody>
                         {Object.values(this.props.records).map(record => {
-                            if (record.type == this.props.type) {
+                            if (record.type.toString() === this.props.type.toString()) {
                                 return this.props.user.login === "admin" ? (
                                     <tr key={record.id}>
                                         <th scope="row">{record.id}</th>
@@ -113,6 +113,7 @@ class Records extends Component {
                                     </tr>
                                 );
                             }
+                         return null
                         })}
                         </tbody>
                     </table>

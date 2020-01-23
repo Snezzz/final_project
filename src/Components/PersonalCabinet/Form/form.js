@@ -15,8 +15,7 @@ class Form extends Component {
 
     checkOldPassword = () => {
         const password = this._op.value;
-        if (password == this.props.user.password) return true;
-        else return false;
+        return password === this.props.user.password;
     };
     checkNewPassword = () => {
         const newPassword = this._np.value;
@@ -25,11 +24,7 @@ class Form extends Component {
             alert("Fields have to be filled");
             return false;
         }
-        if(repeatPassword == newPassword){
-            return true;
-        }
-        else
-            return false;
+        return repeatPassword === newPassword;
     };
     updatePassword = e => {
         e.preventDefault();
