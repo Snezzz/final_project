@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./services.css";
 import { Link } from "react-router-dom";
 import hash from "js-hash-code";
+import PropTypes from "prop-types";
+
+
 class Services extends Component {
     render() {
         return (
@@ -28,4 +31,7 @@ class Services extends Component {
         );
     }
 }
+Services.propTypes = {
+  services: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 export default Services;

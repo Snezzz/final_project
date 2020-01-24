@@ -3,6 +3,7 @@ import "./personalcabinet.css";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import { tab } from "bootstrap/js/src/tab";
+import PropTypes from "prop-types";
 
 class PersonalCabinet extends Component {
     render() {
@@ -43,4 +44,8 @@ class PersonalCabinet extends Component {
         );
     }
 }
+PersonalCabinet.propTypes = {
+  children: PropTypes.object,
+  user: PropTypes.object
+};
 export default PersonalCabinet;

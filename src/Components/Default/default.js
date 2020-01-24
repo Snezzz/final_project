@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import "./default.css";
 import hash from "js-hash-code";
 
@@ -29,5 +30,8 @@ class Default extends Component {
         );
     }
 }
+Default.propTypes = {
+  data: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 
 export default Default;

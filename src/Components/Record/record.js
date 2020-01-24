@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./record.css";
 import "jquery.cookie/jquery.cookie";
 import "jquery-datepicker";
+import PropTypes from 'prop-types';
 
 class Record extends Component {
     clientName = (name) => {this._clientName = name};
@@ -186,5 +187,10 @@ class Record extends Component {
         );
     }
 }
-
+Record.propTypes = {
+    service: PropTypes.string,
+    cost: PropTypes.number,
+    user: PropTypes.object,
+    record: PropTypes.func
+};
 export default Record;

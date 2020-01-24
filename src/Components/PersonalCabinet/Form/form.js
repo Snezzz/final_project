@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "./form.css";
+import PropTypes from "prop-types";
 
 class Form extends Component {
 
@@ -230,4 +231,9 @@ class Form extends Component {
         );
     }
 }
+Form.propTypes = {
+  user: PropTypes.object,
+    update: PropTypes.func
+
+};
 export default Form;

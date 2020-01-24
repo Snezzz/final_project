@@ -4,6 +4,7 @@ import Navigation from "../Navigation/index";
 import Footer from "../Footer/index";
 import RegistrationContainer from "../../Containers/RegistrationContainer/index";
 import './main.css'
+import PropTypes from "prop-types";
 
 class Main extends Component {
     render() {
@@ -28,4 +29,11 @@ class Main extends Component {
         );
     }
 }
+Main.propTypes = {
+    Header: PropTypes.element,
+    Navigation: PropTypes.element,
+    RegistrationContainer: PropTypes.element,
+    Footer: PropTypes.element,
+    children: PropTypes.element
+};
 export default Main;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {load} from "../../actions/companyActions";
 import { connect } from "react-redux";
 import Discounts from "../../Components/Dicsounts/discounts";
+import PropTypes from 'prop-types';
 
 class DiscountsContainer extends Component {
 
@@ -24,6 +25,8 @@ const mapDispatchToProps = dispatch => ({
         dispatch(load(link))
     }
 });
-
+DiscountsContainer.propTypes = {
+  discounts: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(mapStateToProps, mapDispatchToProps)(DiscountsContainer);

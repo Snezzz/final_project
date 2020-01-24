@@ -3,6 +3,7 @@ import { addUser,login} from "../../actions/userActions";
 import { changeStatus } from "../../actions/userActions";
 import { connect } from "react-redux";
 import Form from "../../Components/Form/form";
+import PropTypes from 'prop-types';
 
 class RegistrationContainer extends Component {
 
@@ -40,7 +41,12 @@ const mapDispatchToProps = dispatch => ({
       dispatch(login(log,password))
     }
 });
-
+RegistrationContainer.propTypes = {
+  login: PropTypes.bool,
+  addUser: PropTypes.func,
+  logIn: PropTypes.func,
+    changeStatus: PropTypes.func
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(
     mapStateToProps,

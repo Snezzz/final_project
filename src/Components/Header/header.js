@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import { connect } from "react-redux";
 import { removeUser } from "../../actions/userActions";
+import PropTypes from "prop-types";
 
 class Header extends Component {
 
@@ -59,5 +60,9 @@ const mapDispatchToProps = {
     removeUser
 };
 
+Header.propTypes = {
+  user: PropTypes.object,
+    removeUser: PropTypes.func
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

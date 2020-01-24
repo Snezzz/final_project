@@ -1,5 +1,6 @@
 import "./form.css";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Form extends Component {
     form = (form)=>{this._form = form};
@@ -349,4 +350,11 @@ class Form extends Component {
         );
     }
 }
+
+Form.propTypes = {
+    login: PropTypes.bool,
+    change: PropTypes.func,
+    logIn: PropTypes.func,
+    addUser: PropTypes.func
+};
 export default Form;

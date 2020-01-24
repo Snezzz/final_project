@@ -4,6 +4,7 @@ import Navigation from "../Navigation/index";
 import Record from "../../Record/index";
 import $ from "jquery";
 import "jquery.cookie/jquery.cookie";
+import PropTypes from "prop-types";
 
 class Service extends Component {
     //record to the service
@@ -58,5 +59,11 @@ class Service extends Component {
         );
     }
 }
-
+Service.propTypes = {
+  getService: PropTypes.func,
+    service: PropTypes.object,
+    services: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    user: PropTypes.object,
+    record: PropTypes.func
+};
 export default Service;

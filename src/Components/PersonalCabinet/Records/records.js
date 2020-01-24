@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./records.css";
 import "jquery.cookie/jquery.cookie";
+import PropTypes from "prop-types";
 
 class Records extends Component {
     componentDidMount(){
@@ -122,5 +123,10 @@ class Records extends Component {
         );
     }
 }
-
+Records.propTypes = {
+  update: PropTypes.func,
+  user: PropTypes.object,
+  records:PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  remove: PropTypes.func
+};
 export default Records;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {load} from "../../actions/companyActions";
 import Default from "../../Components/Default/default";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
 class DefaultContainer extends Component {
 
@@ -24,6 +25,9 @@ const mapDispatchToProps = dispatch => ({
         dispatch(load(link))
     }
 });
-
+DefaultContainer.propTypes = {
+  load: PropTypes.func,
+    information: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultContainer);

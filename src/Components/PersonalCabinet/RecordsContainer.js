@@ -7,6 +7,7 @@ import {
     loadRecords
 } from "../../actions/recordsActions";
 import Records from "./Records/records";
+import PropTypes from "prop-types";
 
 class RecordsContainer extends Component {
 
@@ -55,6 +56,13 @@ const mapDispatchToProps = dispatch => ({
         dispatch(updateRecords(data,id,type));
     }
 });
-
+RecordsContainer.propTypes = {
+  loadRecords: PropTypes.func,
+  updateRecords: PropTypes.func,
+  changeCategory: PropTypes.func,
+  user: PropTypes.object,
+  records:PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  type: PropTypes.string
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(mapStateToProps, mapDispatchToProps)(RecordsContainer);

@@ -3,6 +3,7 @@ import Service from "../../Components/Services/Service/index";
 import { connect } from "react-redux";
 import {getServiceInfo, servicesList} from "../../actions/serviceActions";
 import {recordService} from "../../actions/recordsActions";
+import PropTypes from 'prop-types';
 
 class ServiceContainer extends Component {
 
@@ -42,6 +43,13 @@ const mapDispatchToProps = dispatch => ({
       dispatch(recordService(data))
     }
 });
-
+ServiceContainer.propTypes = {
+  getService: PropTypes.func,
+  loadServices: PropTypes.func,
+  record: PropTypes.func,
+  user: PropTypes.object,
+  service: PropTypes.object,
+  services: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 //обновление состояния связывается с корневым редьюсером
 export default connect(mapStateToProps, mapDispatchToProps)(ServiceContainer);

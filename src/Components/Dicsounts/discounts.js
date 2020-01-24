@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./discounts.css";
 import hash from "js-hash-code";
 import "./discounts.css"
+import PropTypes from "prop-types";
 
 class Discounts extends Component {
     render() {
@@ -30,4 +31,7 @@ class Discounts extends Component {
         );
     }
 }
+Discounts.propTypes = {
+    discounts: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 export default Discounts;

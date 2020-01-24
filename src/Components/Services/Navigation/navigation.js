@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import { tab } from "bootstrap/js/src/tab";
 import hash from 'js-hash-code';
+import PropTypes from 'prop-types';
 
 class Navigation extends Component {
     render() {
@@ -31,4 +32,8 @@ class Navigation extends Component {
         );
     }
 }
+Navigation.propTypes = {
+    loadData: PropTypes.func,
+    data: PropTypes.array
+};
 export default Navigation;
