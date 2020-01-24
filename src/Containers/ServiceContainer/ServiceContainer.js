@@ -47,7 +47,17 @@ ServiceContainer.propTypes = {
   getService: PropTypes.func,
   loadServices: PropTypes.func,
   record: PropTypes.func,
-  user: PropTypes.object,
+    user: PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        firstName:PropTypes.string,
+        secondName:PropTypes.string,
+        surName:PropTypes.string,
+        login: PropTypes.string,
+        phoneNumber:PropTypes.string,
+        email: PropTypes.string,
+        password:PropTypes.string
+    }),
   service: PropTypes.object,
   services: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };

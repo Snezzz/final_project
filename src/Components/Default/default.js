@@ -31,7 +31,11 @@ class Default extends Component {
     }
 }
 Default.propTypes = {
-  data: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+  data: PropTypes.oneOfType([PropTypes.shape({
+      id: PropTypes.number,
+      img: PropTypes.string,
+      description: PropTypes.string
+  }),PropTypes.array])
 };
 
 export default Default;

@@ -32,6 +32,10 @@ class Discounts extends Component {
     }
 }
 Discounts.propTypes = {
-    discounts: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    discounts: PropTypes.oneOfType([PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        description: PropTypes.string
+    }), PropTypes.array])
 };
 export default Discounts;

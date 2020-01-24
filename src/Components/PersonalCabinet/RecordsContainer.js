@@ -60,8 +60,25 @@ RecordsContainer.propTypes = {
   loadRecords: PropTypes.func,
   updateRecords: PropTypes.func,
   changeCategory: PropTypes.func,
-  user: PropTypes.object,
-  records:PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    user: PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        firstName:PropTypes.string,
+        secondName:PropTypes.string,
+        surName:PropTypes.string,
+        login: PropTypes.string,
+        phoneNumber:PropTypes.string,
+        email: PropTypes.string,
+        password:PropTypes.string
+    }),
+  records:PropTypes.oneOfType([PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      cost: PropTypes.number,
+      date: PropTypes.string,
+      time: PropTypes.string,
+      type: PropTypes.string
+  }), PropTypes.array]),
   type: PropTypes.string
 };
 //обновление состояния связывается с корневым редьюсером

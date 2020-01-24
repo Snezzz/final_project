@@ -125,8 +125,25 @@ class Records extends Component {
 }
 Records.propTypes = {
   update: PropTypes.func,
-  user: PropTypes.object,
-  records:PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    user: PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        firstName:PropTypes.string,
+        secondName:PropTypes.string,
+        surName:PropTypes.string,
+        login: PropTypes.string,
+        phoneNumber:PropTypes.string,
+        email: PropTypes.string,
+        password:PropTypes.string
+    }),
+    records:PropTypes.oneOfType([PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        cost: PropTypes.number,
+        date: PropTypes.string,
+        time: PropTypes.string,
+        type: PropTypes.string
+    }), PropTypes.array]),
   remove: PropTypes.func
 };
 export default Records;

@@ -232,7 +232,17 @@ class Form extends Component {
     }
 }
 Form.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.shape({
+      id: PropTypes.number,
+      img: PropTypes.string,
+      firstName:PropTypes.string,
+      secondName:PropTypes.string,
+      surName:PropTypes.string,
+      login: PropTypes.string,
+      phoneNumber:PropTypes.string,
+      email: PropTypes.string,
+      password:PropTypes.string
+  }),
     update: PropTypes.func
 
 };

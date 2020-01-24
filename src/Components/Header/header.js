@@ -61,7 +61,17 @@ const mapDispatchToProps = {
 };
 
 Header.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    firstName:PropTypes.string,
+    secondName:PropTypes.string,
+    surName:PropTypes.string,
+    login: PropTypes.string,
+    phoneNumber:PropTypes.string,
+    email: PropTypes.string,
+    password:PropTypes.string
+}),
     removeUser: PropTypes.func
 };
 //обновление состояния связывается с корневым редьюсером

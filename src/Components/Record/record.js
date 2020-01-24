@@ -190,7 +190,17 @@ class Record extends Component {
 Record.propTypes = {
     service: PropTypes.string,
     cost: PropTypes.number,
-    user: PropTypes.object,
+    user: PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        firstName:PropTypes.string,
+        secondName:PropTypes.string,
+        surName:PropTypes.string,
+        login: PropTypes.string,
+        phoneNumber:PropTypes.string,
+        email: PropTypes.string,
+        password:PropTypes.string
+    }),
     record: PropTypes.func
 };
 export default Record;
