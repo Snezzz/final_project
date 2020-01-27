@@ -5,10 +5,12 @@
 2. JQuery Cookie  
 3. React DOM  
 4. JS Jash Code  
-5. Redux  
-6. React Router Redirect  
-7. Bootstrap  
-8. h2 database on server
+5. Redux
+6. Thunk
+7. PropTypes
+7. React Router Redirect  
+8. Bootstrap  
+9. h2 database on server
 
 ### Short Description
 The program is a collection of components and containers. Components are responsible for rendering and containers are intended for  
