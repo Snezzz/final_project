@@ -27,12 +27,12 @@ class Service extends Component {
                         cost={this.props.service.cost}
                         user={this.props.user}
                     />
-                    <div className="col-sm-4">
+                    <div className="col-12 col-sm-4 col-md-4 col-xl-4 col-lg-4">
                         <Navigation data={this.props.services} loadData={this.loadData} />
                     </div>
-                    <div className="col-sm-8">
+                    <div className="col-12 col-sm-8 col-md-8 col-xl-8 col-lg-8">
                         <div className="service-name">
-                            <h1>{this.props.service.name}</h1>
+                            <h1><b>{this.props.service.name}</b></h1>
                         </div>
                         <div className="service-images">
                             <img src={"/img/" + this.props.service.img1} alt="wm" />
@@ -40,7 +40,8 @@ class Service extends Component {
                             <img src={"/img/" + this.props.service.img3} alt="" />
                         </div>
                         <div className="service-cost">
-                            <h2>{this.props.service.cost}</h2>
+                            <b>{this.props.service.cost}
+                                &#36;</b>
                         </div>
                         <div className="service-information">
                             {this.props.service.description}

@@ -80,14 +80,14 @@ class Form extends Component {
         return this.props.user ? (
             <div className="profile-form">
                 <div className="row">
-                    <div className="col-sm-4 profile-img">
+                    <div className="col-12 col-sm-12 col-md-12 col-xl-4 col-lg-4 profile-img">
                         {this.props.user.img ? (
                             <img src={"/img/" + this.props.user.img} alt="logotype" />
                         ) : (
                             <img src="/img/logo.png" alt="logotype" />
                         )}
                     </div>
-                    <div className="col-sm-8">
+                    <div className="col-12 col-sm-12 col-md-12 col-xl-8 col-lg-8">
                         <form>
                             <div className="form-group row">
                                 <label htmlFor="inputName" className="col-sm-4 col-form-label">

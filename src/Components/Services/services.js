@@ -12,9 +12,9 @@ class Services extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         {Object.values(this.props.services).map(item => (
-                            <div className="col-sm-4" key={hash(item)}>
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4" key={hash(item)}>
                                 <div className="card">
-                                    <div>{item.name}</div>
+                                    <div className="card-name">{item.name}</div>
                                     <Link to={"/service/" + item.id}>
                                         <img
                                             src={"/img/" + item.logo + ".jpg"}

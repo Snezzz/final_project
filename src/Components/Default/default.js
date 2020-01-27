@@ -11,7 +11,7 @@ class Default extends Component {
                     <div className="row">
                         {this.props.data.map(data => (
                             <div
-                                className="card col-12 col-sm-4 col-md-4 col-xl-4 col-lg-4"
+                                className="card col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4"
                                 key={hash(data.id)}
                             >
                                 <img

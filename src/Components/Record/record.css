@@ -2,11 +2,11 @@
     display: none;
     position: fixed;
     z-index: 10;
-    width: 33vw;
-    height: auto;
+    width: 440px;
+    height: 730px;
     left: 50%;
     top:20%;
-    margin-left: -175px;
+    margin: -100px 0 0 -220px;
     overflow-y: auto;
     background-color: rgba(169, 150, 135, 0.9);
     padding: 28px;

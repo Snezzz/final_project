@@ -23,5 +23,5 @@
     font-family: "Segoe Script";
 }
 .header-button a button{
-    font-size: 2vh;
+    font-size: 3vh !important;
 }

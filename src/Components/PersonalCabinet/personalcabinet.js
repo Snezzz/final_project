@@ -10,8 +10,8 @@ class PersonalCabinet extends Component {
         return Object.keys(this.props.user).length > 0 ? (
             <div className="personal-cabinet">
                 <div className="row">
-                    <div className="col-sm-3">
-                        <div className="list-group">
+                    <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <div className="list-group menu-item">
                             <Link
                                 to="/cabinet/edit"
                                 className="list-group-item list-group-item-action"
@@ -32,7 +32,7 @@ class PersonalCabinet extends Component {
                             </Link>
                         </div>
                     </div>
-                    <div className="col-sm-9">{this.props.children}</div>
+                    <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">{this.props.children}</div>
                 </div>
             </div>
         ) : (

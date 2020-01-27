@@ -24,7 +24,7 @@
     position:relative;
     right: 0;
     bottom: 2px;
-    font-size: 3vh !important;
+    font-size: 47px !important;
 }
 .service-images{
     text-align: center;
@@ -32,11 +32,23 @@
 .service-cost{
     text-align: center;
 }
+.service-cost b{
+    font-size: calc(4vh + 2vw);;
+}
 .service-name{
-    margin-top: 30px;
+    margin-top: 52px;
     text-align: center;
+}
+.service-name b{
+    text-decoration: underline;
 }
 .services-navigation{
     margin-bottom: 20px;
     margin-top:10px;
+}
+.service-information{
+    height: 265px;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 20px;
 }

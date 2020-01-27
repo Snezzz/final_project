@@ -9,3 +9,10 @@
     background-color: #a99687;
     text-align: center;
 }
+.button-delete{
+    font-size: 23px !important;
+}
+.button-action{
+    width:90%;
+    font-size: calc(1vh + 2vw) !important;
+}

@@ -12,9 +12,9 @@ class Records extends Component {
             <div className="personal-records">
                 <div className="records-actions">
                     <div className="row">
-                        <div className="col-4 col-sm-4">
+                        <div className="col-4 col-sm-4 col-md-4 col-xl-4 col-lg-4">
                             <button
-                                className="btn btn-dark"
+                                className="btn btn-dark button-action"
                                 onClick={() => {
                                     this.props.update("active");
                                 }}
@@ -22,9 +22,9 @@ class Records extends Component {
                                 Active
                             </button>
                         </div>
-                        <div className="col-4 col-sm-4">
+                        <div className="col-4 col-sm-4 col-md-4 col-xl-4 col-lg-4">
                             <button
-                                className="btn btn-dark"
+                                className="btn btn-dark button-action"
                                 onClick={() => {
                                     this.props.update("canceled");
                                 }}
@@ -32,9 +32,9 @@ class Records extends Component {
                                 Canceled
                             </button>
                         </div>
-                        <div className="col-4 col-sm-4">
+                        <div className="col-4 col-sm-4 col-md-4 col-xl-4 col-lg-4">
                             <button
-                                className="btn btn-dark"
+                                className="btn btn-dark button-action"
                                 onClick={() => {
                                     this.props.update("archived");
                                 }}
@@ -82,12 +82,13 @@ class Records extends Component {
                                         {record.type === "active" ? (
                                             <td>
                                                 <button
-                                                    className="btn btn-danger"
+                                                    className="btn btn-danger  button-delete"
                                                     onClick={() => {
                                                         this.props.remove(record);
                                                     }}
                                                 >
-                                                    X
+
+                                                    &#10007;
                                                 </button>
                                             </td>
                                         ) : null}
@@ -102,12 +103,13 @@ class Records extends Component {
                                         {record.type === "active" ? (
                                             <td>
                                                 <button
-                                                    className="btn btn-danger"
+                                                    className="btn btn-danger button-delete"
                                                     onClick={() => {
                                                         this.props.remove(record);
                                                     }}
                                                 >
-                                                    X
+
+                                                    &#10007;
                                                 </button>
                                             </td>
                                         ) : null}

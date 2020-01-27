@@ -24,10 +24,14 @@
 .list-group-item{
     background:none;
 }
+.information{
+    background-color: rgba(2, 2, 2, 0.13);
+}
 .information label{
     display: block;
     margin-left: 12px;
     margin-top: 12px;
+    font-size: 3vh !important;
 }
 @media screen and (min-width:200px) and (max-width: 576px){
     .list-group-item{

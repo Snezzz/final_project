@@ -4,10 +4,13 @@
 .personal-cabinet{
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 100vh;
     font-family: "Monotype Corsiva";
     font-size: 20px;
 }
 .alert h3{
+    text-align: center;
+}
+.menu-item a{
+    font-size: calc(2vh + 2vw) !important;
     text-align: center;
 }

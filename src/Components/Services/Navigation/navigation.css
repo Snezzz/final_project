@@ -10,3 +10,6 @@
     background-color: #a99687;;
     border-color: var(--gray);
 }
+.list-group-item{
+    font-size: 3vh !important;
+}

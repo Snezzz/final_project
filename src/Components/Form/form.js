@@ -159,7 +159,9 @@ class Form extends Component {
                         className="btn btn-outline-danger"
                         onClick={this.close}
                     >
-                        X
+
+
+                        &#10007;
                     </button>
                 </div>
                 <form ref={(el) => this.myFormRef = el}>
@@ -197,12 +199,12 @@ class Form extends Component {
                         </div>
                     </div>
                     <div className="actions">
-                        <div className="form-group row">
-                            <div className="col-sm-12 ">
-                                <button className="btn btn-secondary" onClick={this.toggle}>
+                        <div className="form-group container">
+                            <div className="row">
+                                <button className="btn btn-secondary col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" onClick={this.toggle}>
                                     Registration
                                 </button>
-                                <button className="btn btn-primary" onClick={this.login}>
+                                <button className="btn btn-primary col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" onClick={this.login}>
                                     Sign in
                                 </button>
                             </div>
@@ -334,12 +336,12 @@ class Form extends Component {
                         </div>
                     </div>
                     <div className="actions">
-                        <div className="form-group row">
-                            <div className="col-sm-12 ">
-                                <button className="btn btn-secondary" onClick={this.toggle}>
+                        <div className="form-group container">
+                            <div className="row">
+                                <button className="btn btn-secondary col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" onClick={this.toggle}>
                                     Log in
                                 </button>
-                                <button className="btn btn-primary" onClick={this.addUser}>
+                                <button className="btn btn-primary col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" onClick={this.addUser}>
                                     Create
                                 </button>
                             </div>

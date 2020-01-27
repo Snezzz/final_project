@@ -195,18 +195,18 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 col-sm-8 col-md-10 col-xl-10 col-lg-10">
+                    <div className="col-12 col-sm-8 col-md-9 col-xl-9 col-lg-9">
                         <div className="information">
                             <img src="/img/4.png" alt=""/>
                             <label>
-                                © 2019, St.Petersburg,
-                                <br />
                                 +78129992832, +79503939393, +79509322383
+                                <br/>
+                                    © 2019-2020, St.Petersburg
                             </label>
                         </div>
                     </div>
 
-                    <div className="col-12 col-sm-4 col-md-2 col-xl-2 col-lg-2">
+                    <div className="col-12 col-sm-4 col-md-3 col-xl-3 col-lg-3">
                         <ul className="list-group list-group-flush">
                             <li
                                 className="list-group-item"
