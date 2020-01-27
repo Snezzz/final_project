@@ -2,7 +2,7 @@
 
 ### Framework and libraries  
 1. React  
-2. JQuery, JQuery Cookie  
+2. JQuery Cookie  
 3. React DOM  
 4. JS Jash Code  
 5. Redux  
